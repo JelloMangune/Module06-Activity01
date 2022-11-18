@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+<body>
+
+    <!-- <div>
+    <h2>Please Enter Your Name : <input type="text" ng-model="nameControl"></h2>
+    <h3>Hello</h3><p ng-bind="nameControl"></p>
+    </div> -->
+
+    <!-- <div>
+        <h2>Please Enter Your Name : <input type="text" ng-model="nameControl"></h2>
+        <h3>Hello {{nameControl|uppercase}}!</h3>
+    </div> -->
+
+    <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" class="input" id="firstName" ng-model="firstName">
+        <label for="lastName" >Last Name:</label>
+        <input type="text" class="input" id="lastName" ng-model="lastName">
+        <h1>Greetings to you, {{firstName + " " + lastName|uppercase}} !</h1>
+    </div>
+    <hr><br>
+    <div>
+        <label for="birthYear">Enter your Birth Year:</label>
+        <input type="text" class="input" id="birthYear" ng-model="birthYear">
+        <label for="futureYear">Enter a Future Year:</label>
+        <input type="text" class="input" id="futureYear" ng-model="futureYear">
+        <h1>{{firstName + " " + lastName + " will be "}}{{futureYear - birthYear}} years old in {{futureYear}}.</h1>
+    </div>
+    <hr><br>
+    <div ng-init="productinfo={name:'Sample Product', price:30}; benefits='10% Discount'" style="margin-left:100px;">
+        <div class="card">
+            <p class="title">{{productinfo.name}}</p>
+            <div class="pricecontainer">
+            <p class="price">{{productinfo.price|currency:"₱ "}}</p>
+            <p class="pricedescriptor">/month</p>
+            </div>
+            <p class="includes">This Plan Includes:</p>
+            <ul class="benefitlist">
+            <li>Awesome Benefits</li>
+            <li ng-bind="benefits"></li>
+            </ul>
+            </div>
+        </div>
+        <br>
+        <label for="balance">Enter your Account Balance:</label>
+        <input type="text" class="input" id="balance" ng-model="balance">
+        <h1>Your remaining balance when you bought this product is: {{balance - productinfo.price| currency:"₱ "}}</h1>
+    </div>
+</body>
+</html>
